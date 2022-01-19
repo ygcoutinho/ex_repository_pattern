@@ -7,7 +7,8 @@ class ProductController extends ChangeNotifier {
   List<ProductModel> products = [];
 
   Future<void> getProducts() async {
-    products = await _repository.getAllProducts();
+    List<ProductModel> products = await _repository.getAllProducts();
+    //notificando a view
     notifyListeners();
   }
 }
