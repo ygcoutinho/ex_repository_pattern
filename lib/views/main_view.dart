@@ -1,4 +1,7 @@
 import 'package:ex_repository_pattern/controller/product_controller.dart';
+import 'package:ex_repository_pattern/datasource/local_product_datasource.dart';
+import 'package:ex_repository_pattern/datasource/remote_product_datasource.dart';
+import 'package:ex_repository_pattern/repositories/product_repository.dart';
 import 'package:flutter/material.dart';
 
 class MainView extends StatefulWidget {
@@ -9,7 +12,7 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
-  final _controller = ProductController();
+  final _controller = ProductController(repository: ProductRepository(localDatasource: LocalProductDatasource(), remoteDatasource: RemoteProductDatasource()));
 
   @override
   void initState() {

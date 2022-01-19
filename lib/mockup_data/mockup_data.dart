@@ -1,4 +1,4 @@
-const MockUpData = {
+const mockUpData = {
   "users": [
     {"id": "0", "name": "Robert", "email": "robert@gmail.com", "password": "123"},
     {"id": "1", "name": "Carls", "email": "carls@gmail.com", "password": "1234"}
