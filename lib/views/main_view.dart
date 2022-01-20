@@ -1,8 +1,6 @@
 import 'package:ex_repository_pattern/controller/product_controller.dart';
-import 'package:ex_repository_pattern/datasource/local_product_datasource.dart';
-import 'package:ex_repository_pattern/datasource/remote_product_datasource.dart';
-import 'package:ex_repository_pattern/repositories/product_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
 class MainView extends StatefulWidget {
   const MainView({Key? key}) : super(key: key);
@@ -12,7 +10,7 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
-  final _controller = ProductController(repository: ProductRepository(localDatasource: LocalProductDatasource(), remoteDatasource: RemoteProductDatasource()));
+  final _controller = GetIt.I.get<ProductController>();
 
   @override
   void initState() {
